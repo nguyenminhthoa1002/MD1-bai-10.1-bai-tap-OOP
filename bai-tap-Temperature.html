@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Temperature {
+    doC;
+
+    constructor(doC, doF, doKevin) {
+      this.doC = doC;
+    }
+
+    setDoC(doC){
+        this.doC=doC
+    }
+    getDoC(){
+        return this.doC
+    }
+
+
+    getDoiCsangF(){
+        return this.doC*9/5+32
+    }
+    getDoiCsangK(){
+        return this.doC+273.15
+    }
+  }
+
+  let doiDo = new Temperature(+prompt("Enter the temperature"))
+  alert("Độ F: "+ doiDo.getDoiCsangF());
+  alert("Độ K: "+ doiDo.getDoiCsangK());
+
+</script>
+</body>
+</html>

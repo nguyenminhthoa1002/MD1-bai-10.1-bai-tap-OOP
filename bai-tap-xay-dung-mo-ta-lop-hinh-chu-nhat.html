@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1370px" height="650px" style="border: 1px solid #d3d3d3;"></canvas>
+<script>
+    class hinhChuNhat {
+        chieuDai;
+        chieuRong;
+
+        constructor(chieuDai, chieuRong) {
+            this.chieuDai = chieuDai;
+            this.chieuRong = chieuRong;
+        }
+
+        setChieuDai(chieuDai){
+            this.chieuDai=chieuDai
+        }
+        getChieudai(){
+            return this.chieuDai;
+        }
+        setChieuRong(chieuRong){
+            this.chieuRong=chieuRong;
+        }
+        getChieuRong(){
+            return this.chieuRong;
+        }
+        getDienTich(){
+            return this.chieuDai*this.chieuRong;
+        }
+        getChuVi(){
+            return 2*(this.chieuRong+this.chieuDai);
+        }
+        drawRectangle(ctx) {
+            ctx.beginPath();
+            ctx.strokeRect(100,100,this.chieuDai,this.chieuRong);
+            ctx.fillStyle='red';
+            ctx.fillRect(100,100,this.chieuDai,this.chieuRong);
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+
+    let ctx = document.getElementById('myCanvas').getContext("2d");
+    let dai = +prompt('Nhap chieu dai: ');
+    let rong = +prompt('Nhap chieu rong');
+    let rectangle = new hinhChuNhat(dai,rong);
+    rectangle.drawRectangle(ctx);
+    alert('Dien tich= '+rectangle.getDienTich());
+    alert('Chu vi: '+ rectangle.getChuVi());
+</script>
+</body>
+</html>

@@ -29,9 +29,15 @@
     }
   }
 
-  let doiDo = new Temperature(+prompt("Enter the temperature"))
-  alert("Độ F: "+ doiDo.getDoiCsangF());
-  alert("Độ K: "+ doiDo.getDoiCsangK());
+  let nhietDo= +prompt("Enter the temperature")
+  let doiDo = new Temperature(nhietDo)
+  if (nhietDo<-273){
+      alert("Not found")
+  } else {
+      alert("Độ F: "+ doiDo.getDoiCsangF());
+      alert("Độ K: "+ doiDo.getDoiCsangK());
+  }
+
 
 </script>
 </body>
